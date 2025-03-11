@@ -74,15 +74,15 @@ classDiagram
 
 ### **Participantes**  
 
-- **Flyweight (Glyph)**  
+- **Flyweight (MapElementContract)**  
   Declara uma interface através da qual flyweights podem receber e atuar sobre estados extrínsecos.  
   **→ Implementado por `MapElementContract`**, que define a operação `render()` que cada elemento do mapa deve implementar.
 
-- **ConcreteFlyweight (Character)**  
+- **ConcreteFlyweight (MapElementVisual)**  
   Implementa a interface Flyweight e armazena o estado intrínseco que pode ser compartilhado.  
   **→ Representado por `MapElementVisual`**, que contém atributos como cor e sprite, reutilizados por múltiplos elementos do mapa.  
 
-- **UnsharedConcreteFlyweight (Row, Column)**  
+- **UnsharedConcreteFlyweight (MapElement)**  
   Representa objetos que não precisam ser compartilhados, mas que referenciam objetos Flyweight.  
   **→ Implementado por `MapElement`**, que contém informações individuais (posição, nome e descrição) e mantém uma referência a um `MapElementVisual` compartilhado.  
 
